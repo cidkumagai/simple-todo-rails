@@ -1,24 +1,16 @@
-# README
+# Railsを用いたTodoApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### プロジェクト作成方法
 
-Things you may want to cover:
+` rails new app-name --database=postgresql `
 
-* Ruby version
+### Model作成手順
 
-* System dependencies
+1. プロジェクトのルートディレクトリに移動。
+1. `rails generate model Todo`を実行
+1. 生成したモデルのマイグレーションファイルを編集する。マイグレーションファイルは、db/migrate/ディレクトリにある.rb拡張子のファイル。
+1. 編集後に`rails db:migrate`を実行
+1. モデルにバリデーションを追加する場合は、モデルのファイルにバリデーションを記述する。
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 実行
+` rails s `
