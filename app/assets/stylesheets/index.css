@@ -1,0 +1,61 @@
+header {
+  background-color: gray;
+  width: 100%;
+  height: 70px;
+}
+
+.title {
+  color: black;
+  margin: 0;
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.todo_title {
+  width: 350px;
+  height: 40px;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.todo_button {
+  width: 100px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.print_section {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.todo_list {
+  list-style: none;
+}
+
+.todo_list_item {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.todo_list_item_toggle {
+  display: flex;
+}
+
+.todo_list_item_toggle_text {
+  font-size: 20px;
+}

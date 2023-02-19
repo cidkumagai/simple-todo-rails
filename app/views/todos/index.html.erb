@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rails Todo</title>
+  <%= stylesheet_link_tag 'index' %>
+</head>
+<body>
+  <header>
+    <h1 class="title">Rails Todo</h1>
+  </header>
+  <section class="input_section">
+    <form action="/todos" method="POST" class="todo">
+      <input name="title" placeholder="タスクを入力" class="todo_title">
+      <button type="submit" class="todo_button">ADD</button>
+    </form>
+  </section>
+  <section class="print_section">
+    <h2 class="section_title">Todo一覧</h2>
+    <h5>未達成</h5>
+    <ul class="todo_list">
+    <% @todos.reject { |todo| todo.completed }.each do |todo| %>
+      <li class="todo_list_item">
+        <%= todo.title %>
+        <form action="/todos/<%= todo.id %>" method="PUT" class="todo_list_item_toggle">
+          <input name="_method" type="hidden" value="PUT">
+          <button type="submit" class="todo_list_item_toggle_text">未達成にする</button>
+        </form>
+      </li>
+      <% end %>
+    </ul>
+    <h5>達成済み</h5>
+    <ul class="todo_list">
+    <% @todos.select { |todo| todo.completed }.each do |todo| %>
+      <li class="todo_list_item">
+        <%= todo.title %>
+        <form action="/todos/<%= todo.id %>" method="PUT" class="todo_list_item_toggle">
+          <input name="_method" type="hidden" value="PUT">
+          <button type="submit" class="todo_list_item_toggle_text">達成済みにする</button>
+        </form>
+      </li>
+      <% end %>
+    </ul>
+  </section>
+</body>
+</html>
